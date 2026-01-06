@@ -1,12 +1,12 @@
 function getShows() {
    const showList = getShowList(); // get the list of shows below into this function
-   const cat = showCat.value; // get the category selected by a user from the dropdown mendu
+   const cat = document.getElementById("showCat").value; // get the category selected by a user from the dropdown mendu
 
   // construct the table content into rowString variable
    rowString = "<tr><th>Index</th><th>Title</th><th>Casts</th><th>Year</th><th>Rating / Score</th></tr>";
    results.innerHTML = "" // reset content of table for each getShows() function call
    for (let ndx=0; ndx < showList.length; ndx++) {
-     if (showList[ndx].category == cat) { // include only the selected shows based on category
+     if ((showList[ndx].category == cat  || cat == "All")) { // include only the selected shows based on category
        rowString += "<tr>";
        rowString += "<td>" + ndx + "</td>";
        rowString += "<td>" + showList[ndx].title + "</td>";
