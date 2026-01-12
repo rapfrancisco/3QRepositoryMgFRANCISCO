@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q3 2nd Graded Exercise">
+    <meta name="keywords" content="HTML Forms">
+    <meta name="author" content="RAP Francisco">
+    <title>Sample Form</title>
+    <!-- updated external css link to show how to share it between repository -->
+   <style>
+    body{
+        padding: 25px;
+        font-family: arial;
+        width: 80%;
+        margin-left: 10%;
+        background-color: #edd0ed;
+        }
+
+        .title {
+            color: #de99dc;
+        }
+
+        fieldset:nth-child(2) {
+             margin-top: 20px;
+        }
+
+        legend {
+            background: #edd0ed;
+            color: #de99dc;
+            padding: 5px;
+        }
+        label {
+             margin: 5%;
+        }
+
+        input:focus {
+            background-color: rgb(130, 104, 175);
+            }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1 class="title">Sign-up Page</h1>
+      <form id="Form" action="/submit_page.php" method="post" onsubmit="return confirm('Are you okay with submitting?')" onreset="return confirm('Are you sure with reseting?')">
+        <fieldset>
+          <legend>Club Org Application</legend><br/>
+          <label> Student ID : 
+            <input type="number" name="id" id="id" required onblur=""/>
+          </label><br/><br/>
+          <label> Full Name :
+            <input type="password" name="pw" id="pw" required />
+          </label><br/><br/>
+          <label> Birthday :
+            <input type="date" name="dob" id="dob" required/>
+          </label><br/><br/>
+          <label> Email Address :
+            <input type="email" name="ead" required /> 
+          </label><br/><br/>
+          <label> Grade Level :
+          <select name="grade" id="grade" required>
+            <option value="7"> Grade 7 </option>
+            <option value="8"> Grade 8 </option>
+            <option value="9">  Grade 9 </option>
+            <option value="10"> Grade 10 </option>
+            <option value="11">  Grade 11 </option>
+            <option value="12"> Grade 12 </option>
+          </label> <br/><br/>
+          <label> Intern/Extern :
+            <input type="radio" name="stat" id="stat" value="Intern" required /> Intern
+            <input type="radio" name="stat" id="stat" value="Extern" /> Extern
+          </label><br/><br/>
+          <label for="preferred">Preferred Club/Organization</label>
+            <select name="clubsorgs" id="clubsorgs" required>
+                <option value="l">Loqui</option>
+                <option value="f">Flux</option>
+                <option value="mun">MUN</option>
+                <option value="pxyz">Pisay.XYZ</option>
+                <option value="bc">Baking Club</option>
+                <option value="sscho">Scischo</option>
+                <option value="al">Ang Lagablab</option>
+            </select>
+            <br><br>
+          <label> Why do you want to join? : 
+            <textarea name="why" id="why" required>
+              
+            </textarea>
+          </label><br/><br/>
+          
+          
+        </fieldset>  
+        <fieldset>
+          <legend>Action Buttons</legend>
+          <button type="submit"> Submit </button>
+          <input type="reset" value=" Clear " />
+        </fieldset> 
+      </form>
+    </section>
+    <script src="q3e3script.js"></script>
+  </body>
+</html>
