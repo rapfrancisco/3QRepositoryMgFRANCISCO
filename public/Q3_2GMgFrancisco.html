@@ -6,9 +6,9 @@
     <meta name="description" content="Q3 2nd Graded Exercise">
     <meta name="keywords" content="HTML Forms">
     <meta name="author" content="RAP Francisco">
-    <title>Sample Form</title>
+    <title>Form</title>
     <!-- updated external css link to show how to share it between repository -->
-    <!-- onsubmit onreset onfocus onblur onchange callback_function preent_default-->
+    <!-- add onsubmit onreset onfocus onblur onchange callback_function preent_default-->
    <style>
     body{
         padding: 25px;
@@ -44,22 +44,23 @@
   <body>
     <section>
       <h1 class="title">Sign-up Page</h1>
-      <form id="Form" action="/submit_page.php" method="post" onsubmit="return confirm('Are you okay with submitting?')" onreset="return confirm('Are you sure with reseting?')">
+      <form id="Form" action="/submit_page.php" method="post">
+        <p id="message"> </p>
         <fieldset>
           <legend>Club Org Application</legend><br/>
           <label> Student ID : 
-            <input type="number" name="id" id="id" required onblur=""/>
+            <input type="number" name="id" id="id" required onfocus="onFocus()" onblur="onBlur()"/>
           </label><br/><br/>
           <label> Full Name :
-            <input type="password" name="pw" id="pw" required />
+            <input type="text" name="fullname" id="fullname" required onfocus="onFocus()" onblur="onBlur()"/>
           </label><br/><br/>
           <label> Birthday :
-            <input type="date" name="dob" id="dob" required/>
+            <input type="date" name="dob" id="dob" required onfocus="onFocus()" onblur="onBlur()"/>
           </label><br/><br/>
           <label> Email Address :
-            <input type="email" name="ead" required /> 
+            <input type="email" name="ead" required onfocus="onFocus()" onblur="onBlur()"/> 
           </label><br/><br/>
-          <label> Grade Level :
+          <label name="grade" id="grade" required onchange="grade()"> Grade Level :
           <select name="grade" id="grade" required>
             <option value="7"> Grade 7 </option>
             <option value="8"> Grade 8 </option>
@@ -69,11 +70,11 @@
             <option value="12"> Grade 12 </option>
           </label> <br/><br/>
           <label> Intern/Extern :
-            <input type="radio" name="stat" id="stat" value="Intern" required /> Intern
+            <input type="radio" name="stat" id="status" value="Intern" required /> Intern
             <input type="radio" name="stat" id="stat" value="Extern" /> Extern
           </label><br/><br/>
           <label for="preferred">Preferred Club/Organization</label>
-            <select name="clubsorgs" id="clubsorgs" required>
+            <select name="clubsorgs" id="clubsorgs" required onchange="club()">
                 <option value="l">Loqui</option>
                 <option value="f">Flux</option>
                 <option value="mun">MUN</option>
@@ -86,7 +87,7 @@
             </select>
             <br><br>
           <label> Why do you want to join? : 
-            <textarea name="why" id="why" required>
+            <textarea name="why" id="why" required onfocus="onFocus()" onblur="onBlur()">
               
             </textarea>
           </label><br/><br/>
@@ -100,6 +101,6 @@
         </fieldset> 
       </form>
     </section>
-    <script src="q3e3script.js"></script>
+    <script src="Q3_2GMgFrancisco.js"></script>
   </body>
 </html>
